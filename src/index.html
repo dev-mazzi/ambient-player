@@ -23,11 +23,11 @@
         <div class="stopwatch">
             <div class="time">00:00:00</div>
             <div class="time_control">
-                <h3 class="time_start">시작하기</h3>
+                <button class="time_start" onclick="startTime()">시작하기</button>
                 <span></span>
-                <h3 class="time_pause">일시정지</h3>
+                <button class="time_pause" onclick="stopTime()">일시정지</button>
                 <span></span>
-                <h3 class="time_reset">리셋</h3>
+                <button class="time_reset" onclick="resetTime()">리셋</button>
             </div>
         </div>
         <div class="player">
@@ -51,6 +51,6 @@
             </audio>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="app.js" type="text/javascript"></script>
 </body>
 </html>
