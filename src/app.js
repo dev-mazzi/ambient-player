@@ -1,4 +1,4 @@
-// 타이머 기능 구현
+// 스톱워치
 const time = document.querySelector(".time");
 
 let timeId;
@@ -37,9 +37,10 @@ function getTimeFormatString() {
     return String(hour).padStart(2, '0') + ":" + String(min).padStart(2, '0') + ':' + String(sec).padStart(2, '0');
 }
 
-// 배경화면 변경
+// 버튼
+let i = 0;
 const container = document.querySelector(".container");
-const clickOption = {
+const clickButton = {
     forest: document.querySelector(".option_container :nth-child(1)"),
     cafe: document.querySelector(".option_container :nth-child(2)"),
     library: document.querySelector(".option_container :nth-child(3)"),
@@ -55,30 +56,92 @@ const bgList = [
     "url('assets/img/img_park.jpg')",
     "url('assets/img/img_beach.jpg')"
 ]
-const changeBg = {
+const audioList = [
+    new Audio("assets/audio/audio_forest.mp3"),
+    new Audio("assets/audio/audio_cafe.mp3"),
+    new Audio("assets/audio/audio_library.mp3"),
+    new Audio("assets/audio/audio_airplane.mp3"),
+    new Audio("assets/audio/audio_park.mp3"),
+    new Audio("assets/audio/audio_beach.mp3")
+]
+
+const clickEvent = {
     forest: function() {
-        container.style.backgroundImage = bgList[0]
+        container.style.backgroundImage = bgList[0];
+        for(i=0; i<6; i++){
+            audioList[i].pause();
+        };
+        i=0;
+        audioList[0].play();
+        playButton.classList.add("hide");
     },
     cafe: function() {
-        container.style.backgroundImage = bgList[1]
+        container.style.backgroundImage = bgList[1];
+        for(i=0; i<6; i++){
+            audioList[i].pause();
+        };
+        i=1;
+        audioList[1].play();
+        playButton.classList.add("hide");
     },
     library: function() {
-        container.style.backgroundImage = bgList[2]
+        for(i=0; i<6; i++){
+            audioList[i].pause();
+        };
+        container.style.backgroundImage = bgList[2];
+        i=2;
+        audioList[2].play();
+        playButton.classList.add("hide");
     },
     airplane: function() {
-        container.style.backgroundImage = bgList[3]
+        for(i=0; i<6; i++){
+            audioList[i].pause();
+        };
+        container.style.backgroundImage = bgList[3];
+        i=3;
+        audioList[3].play();
+        playButton.classList.add("hide");
     },
     park: function() {
-        container.style.backgroundImage = bgList[4]
+        for(i=0; i<6; i++){
+            audioList[i].pause();
+        };
+        container.style.backgroundImage = bgList[4];
+        i=4;
+        audioList[4].play();
+        playButton.classList.add("hide");
     },
     beach: function() {
-        container.style.backgroundImage = bgList[5]
+        for(i=0; i<6; i++){
+            audioList[i].pause();
+        };
+        container.style.backgroundImage = bgList[5];
+        i=5;
+        audioList[5].play();
+        playButton.classList.add("hide");
     }
 }
 
-clickOption.forest.addEventListener("click", changeBg.forest);
-clickOption.cafe.addEventListener("click", changeBg.cafe);
-clickOption.library.addEventListener("click", changeBg.library);
-clickOption.airplane.addEventListener("click", changeBg.airplane);
-clickOption.park.addEventListener("click", changeBg.park);
-clickOption.beach.addEventListener("click", changeBg.beach);
+clickButton.forest.addEventListener("click", clickEvent.forest);
+clickButton.cafe.addEventListener("click", clickEvent.cafe);
+clickButton.library.addEventListener("click", clickEvent.library);
+clickButton.airplane.addEventListener("click", clickEvent.airplane);
+clickButton.park.addEventListener("click", clickEvent.park);
+clickButton.beach.addEventListener("click", clickEvent.beach);
+
+
+// 오디오 컨트롤 버튼
+const playButton = document.querySelector(".play");
+const pauseButton = document.querySelector(".pause");
+const stopButton = document.querySelector(".stop");
+
+function clickPlay() {
+    audioList[i].play();
+    playButton.classList.toggle("hide");
+}
+function clickPause() {
+    audioList[i].pause();
+}
+
+playButton.addEventListener("click", clickPlay);
+pauseButton.addEventListener("click", clickPause);
