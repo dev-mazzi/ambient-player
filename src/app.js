@@ -49,20 +49,20 @@ const clickButton = {
     beach: document.querySelector(".option_container :nth-child(6)")
 }
 const bgList = [
-    "url('assets/img/img_forest.jpg')",
-    "url('assets/img/img_cafe.jpg')",
-    "url('assets/img/img_library.jpg')",
-    "url('assets/img/img_airplane.jpg')",
-    "url('assets/img/img_park.jpg')",
-    "url('assets/img/img_beach.jpg')"
+    "url('src/assets/img/img_forest.jpg')",
+    "url('src/assets/img/img_cafe.jpg')",
+    "url('src/assets/img/img_library.jpg')",
+    "url('src/assets/img/img_airplane.jpg')",
+    "url('src/assets/img/img_park.jpg')",
+    "url('src/assets/img/img_beach.jpg')"
 ]
 const audioList = [
-    new Audio("assets/audio/audio_forest.mp3"),
-    new Audio("assets/audio/audio_cafe.mp3"),
-    new Audio("assets/audio/audio_library.mp3"),
-    new Audio("assets/audio/audio_airplane.mp3"),
-    new Audio("assets/audio/audio_park.mp3"),
-    new Audio("assets/audio/audio_beach.mp3")
+    new Audio("src/assets/audio/audio_forest.mp3"),
+    new Audio("src/assets/audio/audio_cafe.mp3"),
+    new Audio("src/assets/audio/audio_library.mp3"),
+    new Audio("src/assets/audio/audio_airplane.mp3"),
+    new Audio("src/assets/audio/audio_park.mp3"),
+    new Audio("src/assets/audio/audio_beach.mp3")
 ]
 
 const clickEvent = {
