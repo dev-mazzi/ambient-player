@@ -141,7 +141,14 @@ function clickPlay() {
 }
 function clickPause() {
     audioList[i].pause();
+    playButton.classList.toggle("hide");
+}
+function clickStop() {
+    audioList[i].pause();
+    audioList[i].currentTime = 0;
+    playButton.classList.remove("hide");
 }
 
 playButton.addEventListener("click", clickPlay);
 pauseButton.addEventListener("click", clickPause);
+stopButton.addEventListener("click", clickStop);

@@ -155,5 +155,5 @@ h1 {
     height: 32px;
 }
 .hide {
-    opacity: 0;
+    display: none;
 }
