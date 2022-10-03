@@ -32,8 +32,10 @@ h1 {
 .option_container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .option_container li {
+    min-width: 48px;
     height: 48px;
     padding: 0 24px;
     margin: 6px;
@@ -69,6 +71,11 @@ h1 {
     font-size: 100px;
     font-weight: 500;
     color: white;
+}
+@media only screen and ( max-width: 480px ) {
+    .time {
+        font-size: 72px;
+    }
 }
 .time_control {
     display: flex;
